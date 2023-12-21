@@ -1,0 +1,60 @@
+OBEJECT FORMAT FOR CREATING PROPERTY
+{
+  location: 'no 5 melrose street umuahia abia state',
+  number_of_toilets: '2',
+  number_of_bedroom: '3',
+  amenities: [
+    'Fitted Kitchen With Accessories',
+    'Modern Day Pop Ceiling',
+    'Water Heater'
+  ],
+  extra_list: [ 'conducive environment', 'Close to central Market' ],
+  category: 'duplex',
+  price: '1000000',
+  insurace_fee: '0',
+  hospitality_fee: '0',
+  legal_fee: '0',
+  description: ' how to write the best property descriptions possible for making potential buyers or tenants fall in love with a property. Before starting with the recommendations, though, you should bear in mind that choosing a house is based largely on sentimental reasons, something that should be reflected in the description.',
+}
+
+
+
+OBEJECT FORMAT RECIEVED BY THE SERVER FOR PROPERTY UPDATE
+ {
+  id: 'clq70ok3h0000m32vpunlrf2e',
+  location: 'umudike',
+  number_of_toilets: '25',
+  number_of_bedroom: '18',
+  amenities: [ 'new amenity' ],
+  extra_list: [ 'cctv cameras' ],
+  category: 'self contain',
+  price: '85000',
+  hospitality_fee: '',
+  insurace_fee: '',
+  legal_fee: '',
+  oldImages: [
+    {id: "clq7imzd50001a6v79yi7yf2u", public_id: "homely_folder/t6chpv6wdinoy5khkkfj"},
+    {id: "clq7in0nu0002a6v7bq4wk8kz", public_id: "homely_folder/himp8ccucfm14ihut6hb"},
+  ],
+  description: 'nsjdjsdssknmds skmskndks sdkskds ksdksd xsmdksd '
+}
+
+
+OBJECT FORMAT FOR DELETING PROPERTY
+
+{
+  propertyId: "clq7mkyaw0000kfd55qk19g30",
+  filesData: [
+    {
+      id: "clq7ml0iy0001kfd5wenivht1",
+      public_id: "homely_folder/vmiurbsrkulbgb0llp11",
+    },
+    {
+      id: "clq7ml1in0002kfd5vp9bz212",
+      public_id: "homely_folder/dbxzavrm3rtqatulrc1m",
+    },
+  ],
+};
+
+CHANHGE PASSWORD 
+{password: "1234566"}

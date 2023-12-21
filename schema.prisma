@@ -1,0 +1,60 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["jsonProtocol"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+
+model User {
+  id            String       @default(cuid()) @id
+  firstname     String
+  lastname      String
+  email         String   @unique
+  password      String
+  username      String?
+  phone         String
+  publicId      String?
+  imageUrl      String?
+  rating        String?
+  isVerified    Boolean? @default(true)
+  isActive      Boolean? @default(false)
+  isLocked      Boolean? @default(false)
+  property      Property[]
+}
+
+model Property {
+  id                          String    @default(cuid()) @id
+  user                        User      @relation(fields: [userId], references: [id])
+  userId                      String
+  location                    String    
+  number_of_toilets           Int 
+  number_of_bedroom           Int 
+  amenities                   String    
+  extra_list                  String?   
+  category                    String    
+  price                       Float 
+  insurace_fee                Float?
+  hospitality_fee             Float?
+  legal_fee                   Float?
+  total_amount                Float 
+  likes                       Float?
+  description                 String?   
+  createdAt                   DateTime  @default(now()) @map(name: "created_at")
+  image                       Image[]
+}
+
+model Image {
+  id          String  @default(cuid()) @id
+  publicId    String
+  imageUrl    String
+  property    Property @relation(fields: [propertyId], references: [id])
+  propertyId  String
+}
+
