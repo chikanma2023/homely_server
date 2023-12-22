@@ -1,11 +1,11 @@
 const { prisma } = require("../../lib/index");
 
-//------------- Get all properties-------------
+//------------- Get all properties Endpoint-------------
 const get_all_properties = async (req, res) => {
   try {
     let properties = await prisma.property.findMany({
       //   skip: 3,
-      take: 30,
+      // take: 30,
       include: {
         image: {
           select: {
@@ -41,8 +41,7 @@ const get_all_properties = async (req, res) => {
   }
 };
 
-// Get single property be id
-//--------------------------------
+//----------Get single property Endpoint by id----------
 const get_single_property = async (req, res) => {
   try {
     if (req.params) {

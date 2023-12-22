@@ -71,8 +71,8 @@ const updateProperty = async (req) => {
       where: { id: body.id },
       data: {
         location: body.location.toLowerCase().trim(),
-        number_of_toilets: Number(body.number_of_toilets.toLowerCase().trim()),
-        number_of_bedroom: Number(body.number_of_bedroom.toLowerCase().trim()),
+        number_of_toilets: Number(body.number_of_toilets.trim()),
+        number_of_bedroom: Number(body.number_of_bedroom.trim()),
         amenities: JSON.stringify(body.amenities),
         extra_list: JSON.stringify(body.extra_list),
         category: body.category.toLowerCase().trim(),
