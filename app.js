@@ -5,7 +5,6 @@ const UUID = require("uuid");
 const session = require("express-session");
 require("dotenv").config();
 const app = express();
-const port = 5000;
 
 // Routes
 //-------------
@@ -42,7 +41,9 @@ app.get("/", (req, res) => {
 app.use(`${url}property`, propertyRoute);
 app.use(`${url}user`, userRoute);
 
-app.listen(port, () => console.log(`App running on ${port}`));
+app.listen(process.env.PORT, () =>
+  console.log(`App running on ${process.env.PORT}`)
+);
 
 
 
