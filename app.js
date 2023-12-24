@@ -36,6 +36,9 @@ app.use(
 
 //Endpoints
 //---------------
+app.get("/", (req, res) => {
+  res.json("Hello This Is Homely App");
+});
 app.use(`${url}property`, propertyRoute);
 app.use(`${url}user`, userRoute);
 
