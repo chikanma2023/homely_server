@@ -8,6 +8,7 @@ const app = express();
 
 // Routes
 //-------------
+const getAllProperties = require("./controllers/property/get");
 const propertyRoute = require("./routes/propertyRoute/index");
 const userRoute = require("./routes/userRoute/index");
 const url = "/homely/";
@@ -35,9 +36,7 @@ app.use(
 
 //Endpoints
 //---------------
-app.get("/", (req, res) => {
-  res.json("Hello This Is Homely App");
-});
+app.get("/", getAllProperties.get_all_properties);
 app.use(`${url}property`, propertyRoute);
 app.use(`${url}user`, userRoute);
 

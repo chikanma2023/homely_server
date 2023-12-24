@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {
-  get_all_properties,
+  // get_all_properties,
   get_single_property,
 } = require("../../controllers/property/get");
 const { search } = require("../../controllers/property/search");
@@ -10,7 +10,7 @@ const { update_property } = require("../../controllers/property/update");
 const { delete_property } = require("../../controllers/property/delete");
 const { rate_property } = require("../../controllers/property/rating");
 
-router.get("/", get_all_properties);
+// router.get("/", get_all_properties);
 router.get("/single/:id", get_single_property);
 router.post("/search/:query", search);
 router.post("/create", create_property);
