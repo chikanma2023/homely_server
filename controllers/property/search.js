@@ -9,14 +9,14 @@ const search = async (req, res) => {
           OR: [
             {
               location: {
-                contains: query, // Search by name containing the query string
+                contains: query,
               },
             },
             {
               AND: [
                 {
                   category: {
-                    lte: query, // Filter for price less than or equal to maxPrice
+                    lte: query,
                   },
                 },
               ],

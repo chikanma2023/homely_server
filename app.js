@@ -8,7 +8,6 @@ const app = express();
 
 // Routes
 //-------------
-const getAllProperties = require("./controllers/property/get");
 const propertyRoute = require("./routes/propertyRoute/index");
 const userRoute = require("./routes/userRoute/index");
 const url = "/homely/";
@@ -36,14 +35,12 @@ app.use(
 
 //Endpoints
 //---------------
-app.get("/", getAllProperties.get_all_properties);
 app.use(`${url}property`, propertyRoute);
 app.use(`${url}user`, userRoute);
 
 app.listen(process.env.PORT, () =>
   console.log(`App running on ${process.env.PORT}`)
 );
-
 
 
 // Middlewares
