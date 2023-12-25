@@ -36,7 +36,7 @@ app.use(
 //Endpoints
 //---------------
 app.get("/", (req, res) => {
-  res.json("This is Homly Server");
+  res.json("This is Homely Server");
 });
 app.use(`${url}property`, propertyRoute);
 app.use(`${url}user`, userRoute);
@@ -44,7 +44,6 @@ app.use(`${url}user`, userRoute);
 app.listen(process.env.PORT, () =>
   console.log(`App running on ${process.env.PORT}`)
 );
-
 
 // Middlewares
 // const whitelist = [
